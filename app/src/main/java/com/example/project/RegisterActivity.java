@@ -26,15 +26,16 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    TextView HaveAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        TextView btn=findViewById(R.id.alreadyHaveAccount);
-        btn.setOnClickListener(new View.OnClickListener(){
+        HaveAccount = findViewById(R.id.alreadyHaveAccount);
+        HaveAccount.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
+            public void onClick(View view){
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
@@ -42,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
         inputConfirmPassword = findViewById(R.id.inputConfirmPassword);
-        btnRegister = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
         progressDialog = new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
@@ -77,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 progressDialog.dismiss();
                                 sendUserToNextActivity();
-                                Toast.makeText(RegisterActivity.this,"Registration Succefull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this,"Registration Successful", Toast.LENGTH_SHORT).show();
                             }else{
                                 progressDialog.dismiss();
                                 Toast.makeText(RegisterActivity.this,""+task.getException(), Toast.LENGTH_SHORT).show();

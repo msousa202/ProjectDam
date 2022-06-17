@@ -26,15 +26,18 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    TextView textViewSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView btn=findViewById(R.id.textViewSignUp);
-        btn.setOnClickListener(new View.OnClickListener(){
+
+        textViewSignUp=findViewById(R.id.textViewSignUp);
+
+        textViewSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
+            public void onClick(View view){
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
             }
         });
