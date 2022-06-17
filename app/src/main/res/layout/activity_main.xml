@@ -9,16 +9,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_500"
-        android:gravity="end"
-        android:textAlignment="textEnd"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Fitness App"
-        app:titleTextColor="#FFF" />
 
     <ScrollView
         android:layout_width="fill_parent"

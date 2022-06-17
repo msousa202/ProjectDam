@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -55,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+    }
+
+
+
+    public void food(View view) {
+
+        Intent intent = new Intent(MainActivity.this,FoodActivity.class);
+        startActivity(intent);
+
 
 
     }
@@ -63,16 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this,SecondActivity2.class);
         startActivity(intent);
-
-
-    }
-
-    public void food(View view) {
-
-        Intent intent = new Intent(MainActivity.this,FoodActivity.class);
-        startActivity(intent);
-
-
 
     }
 }

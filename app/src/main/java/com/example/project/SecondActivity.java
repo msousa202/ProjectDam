@@ -16,7 +16,5 @@ public class SecondActivity extends AppCompatActivity {
     public void Imagebuttononcliecked(View view) {
 
 
-
-
     }
 }
