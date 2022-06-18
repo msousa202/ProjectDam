@@ -13,40 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="History"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="170dp" />
-
-    <TextView
-        android:id="@+id/textViewAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Age"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        tools:layout_editor_absoluteX="174dp" />
-
-    <TextView
-        android:id="@+id/textViewHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Height"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAge"
-        tools:layout_editor_absoluteX="173dp" />
-
-    <TextView
-        android:id="@+id/textViewWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Weight"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHeight"
-        tools:layout_editor_absoluteX="170dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listViewHistory"
         android:layout_width="409dp"
         android:layout_height="548dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="182dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:layout_editor_absoluteX="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

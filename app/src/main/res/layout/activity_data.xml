@@ -44,15 +44,16 @@
                             android:textColor="#ff000000"
                             android:textSize="15.0dp"
                             android:textStyle="bold"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:padding="5.0dp"
-                            android:text="Insert your data:"
+                            android:text="Insert your personal data:"
                             android:textColor="#600080"
-                            android:textStyle="bold"
-                            android:textSize="12.0dp"/>
+                            android:textSize="12.0dp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -110,13 +111,13 @@
                             <TextView
                                 android:layout_width="120.0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Insert your height:"
-                                android:fontFamily="monospace"
-                                android:textSize="12.0dp"
                                 android:layout_gravity="center"
+                                android:fontFamily="monospace"
                                 android:gravity="center"
+                                android:text="Insert your height (meters):"
                                 android:textColor="#ff000000"
-                                android:textStyle="bold"/>
+                                android:textSize="12.0dp"
+                                android:textStyle="bold" />
 
                             <EditText
                                 android:id="@+id/height"
@@ -149,13 +150,13 @@
                             <TextView
                                 android:layout_width="120.0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Insert your weight:"
-                                android:fontFamily="monospace"
-                                android:textSize="12.0dp"
                                 android:layout_gravity="center"
+                                android:fontFamily="monospace"
                                 android:gravity="center"
+                                android:text="Insert your weight (kg):"
                                 android:textColor="#ff000000"
-                                android:textStyle="bold"/>
+                                android:textSize="12.0dp"
+                                android:textStyle="bold" />
 
                             <EditText
                                 android:id="@+id/weight"
@@ -201,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:onClick="GoToHistory"
-                        android:text="Check your History" />
+                        android:text="Check your Personal Data History" />
 
                 </LinearLayout>
 
