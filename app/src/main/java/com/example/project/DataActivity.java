@@ -93,6 +93,13 @@ public class DataActivity extends LoginActivity {
 
     }
 
+    public void GoToExerciseHistory(View view) {
+
+        Intent intent = new Intent(DataActivity.this,ExerciseHistoryActivity.class);
+        startActivity(intent);
+
+    }
+
    /*
     private void insertUserAge() {
 

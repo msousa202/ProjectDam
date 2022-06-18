@@ -204,6 +204,14 @@
                         android:onClick="GoToHistory"
                         android:text="Check your Personal Data History" />
 
+                    <Button
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:onClick="GoToExerciseHistory"
+                        android:text="Check Your Exercise Pack History" />
+
                 </LinearLayout>
 
 

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         String UUID = fAuth.getCurrentUser().getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DateFormat df = new SimpleDateFormat("yyyy,MM,dd");
+        DateFormat df = new SimpleDateFormat("yyyy,MM,dd HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
 
         button1.setOnClickListener(new View.OnClickListener() {
