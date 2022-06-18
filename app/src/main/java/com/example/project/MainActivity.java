@@ -1,7 +1,6 @@
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,13 +57,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void food(View view) {
 
-        Intent intent = new Intent(MainActivity.this,FoodActivity.class);
+        Intent intent = new Intent(MainActivity.this, DataActivity.class);
         startActivity(intent);
-
-
 
     }
 
@@ -74,4 +70,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
+
 }

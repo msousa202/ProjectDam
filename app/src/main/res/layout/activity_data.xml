@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical"
+    tools:context=".DataActivity">
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dp"
+                android:layout_marginTop="15.0dp"
+                android:background="@drawable/backgroundcrop"
+                android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical"
+                        android:background="#C0C0C0">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:padding="5.0dp"
+                            android:text="Here you will be able to se your progress!"
+                            android:textColor="#ff000000"
+                            android:textSize="15.0dp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:padding="5.0dp"
+                            android:text="Insert your data:"
+                            android:textColor="#600080"
+                            android:textStyle="bold"
+                            android:textSize="12.0dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="150.0dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="120.0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Insert your  age:"
+                                    android:fontFamily="monospace"
+                                    android:textSize="12.0dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="#ff000000"
+                                    android:textStyle="bold"/>
+
+                                <EditText
+                                    android:id="@+id/age"
+                                    android:layout_width="120.0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:ems="10"
+                                    android:inputType="textPersonName" />
+
+                                <Button
+                                    android:id="@+id/InsertAge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Add"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="120.0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Insert your height:"
+                                android:fontFamily="monospace"
+                                android:textSize="12.0dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="#ff000000"
+                                android:textStyle="bold"/>
+
+                            <EditText
+                                android:id="@+id/height"
+                                android:layout_width="120.0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+
+                            <Button
+                                android:id="@+id/InsertHeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Add"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="120.0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Insert your weight:"
+                                android:fontFamily="monospace"
+                                android:textSize="12.0dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="#ff000000"
+                                android:textStyle="bold"/>
+
+                            <EditText
+                                android:id="@+id/weight"
+                                android:layout_width="120.0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+
+                            <Button
+                                android:id="@+id/InsertWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Add"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dp"
+                android:layout_marginTop="15.0dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/food"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:onClick="GoToGraph"
+                        android:layout_width="200.0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Check your Graph"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </LinearLayout>
+            
+            
+            
+            
+            
+            
+            
+            
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ScrollView>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</LinearLayout>
+
+
+

@@ -19,7 +19,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".FoodActivity"
+            android:name=".DataActivity"
             android:exported="false" />
         <activity
             android:name=".SecondActivity2"
