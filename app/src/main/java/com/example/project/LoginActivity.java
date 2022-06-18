@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         progressDialog.dismiss();
                         sendUserToNextActivity();
-                        Toast.makeText(LoginActivity.this,"Registration Succefull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"Login Succefull", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

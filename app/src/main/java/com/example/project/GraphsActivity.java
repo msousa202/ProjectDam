@@ -1,58 +1,60 @@
 package com.example.project;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-
-import java.util.ArrayList;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class GraphsActivity extends AppCompatActivity {
 
-    LineChart lineChart;
+    String UUID;
+    TextView age, height, weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphs);
 
-        lineChart = (LineChart) findViewById(R.id.lineChart);
+        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+        UUID = fAuth.getCurrentUser().getUid();
 
-        ArrayList<Entry> yAXESsin = new ArrayList<>();
-        ArrayList<Entry> yAXEScos = new ArrayList<>();
-        double x = 0;
-        int numDataPoints = 1000;
-        for(int i=0;i<numDataPoints;i++){
-            float sinFunction = Float.parseFloat(String.valueOf(Math.sin(x)));
-            float cosFunction = Float.parseFloat(String.valueOf(Math.cos(x)));
-            x= x + 0.1;
-            float xEntry = Float.parseFloat(String.valueOf(x));
-            yAXESsin.add(new Entry(xEntry,sinFunction));
-            yAXEScos.add(new Entry(xEntry,cosFunction));
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        }
+        UUID = fAuth.getCurrentUser().getUid();
 
-        ArrayList<ILineDataSet> lineDataSets = new ArrayList<ILineDataSet>();
+        age = findViewById(R.id.textViewAge);
+        height = findViewById(R.id.textViewHeight);
+        weight = findViewById(R.id.textViewWeight);
 
-        LineDataSet lineDataSet1 = new LineDataSet(yAXEScos,"cos");
-        lineDataSet1.setDrawCircles(false);
-        lineDataSet1.setColor(Color.BLUE);
+        Task<QuerySnapshot> documentReference = db.collection("userData").whereEqualTo("UUID", UUID).orderBy("date").get();
+        documentReference.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d(TAG, document.getId() + " => " + document.getData());
+                        age.setText("ssssssss");
+                        age.setText(document.getString("age"));
+                        height.setText(document.getString("height"));
+                        weight.setText(document.getString("weight"));
+                    }
+                } else {
+                    Log.d(TAG, "Error getting documents: ", task.getException());
+                }
+            }
+        });
 
-        LineDataSet lineDataSet2 = new LineDataSet(yAXESsin,"sin");
-        lineDataSet2.setDrawCircles(false);
-        lineDataSet2.setColor(Color.RED);
-
-        lineDataSets.add(lineDataSet1);
-        lineDataSets.add(lineDataSet2);
-
-        lineChart.setData(new LineData(lineDataSets));
-
-        lineChart.setVisibleXRangeMaximum(65f);
     }
+
 }
