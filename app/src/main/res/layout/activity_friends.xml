@@ -134,9 +134,10 @@
 
 
                         <EditText
+                            android:id="@+id/addFriends"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="                       ...                       "/>
+                            android:text="                       ...                       " />
 
                         <Button
                             android:id="@+id/addFriend"
@@ -144,6 +145,45 @@
                             android:layout_height="wrap_content"
                             android:text="ADD"
                             android:textStyle="bold"/>
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="150.0dp"
+                    android:background="@drawable/backgroundcrop"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10.0dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal"
+                        android:layout_margin="10.0dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your friend List"
+                            android:textStyle="bold"
+                            android:layout_gravity="top"
+                            android:gravity="top"
+                            android:fontFamily="serif"
+                            android:textColor="#ff000000"/>
+
+
+
+
+
 
 
 
