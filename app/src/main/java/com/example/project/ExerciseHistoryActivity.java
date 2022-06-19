@@ -5,10 +5,18 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,9 +32,6 @@ import java.util.ArrayList;
 public class ExerciseHistoryActivity extends AppCompatActivity {
 
     String UUID;
-    ArrayAdapter<String> adapter2;
-    ArrayList<String> arrayList2;
-    ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +45,9 @@ public class ExerciseHistoryActivity extends AppCompatActivity {
 
         UUID = fAuth.getCurrentUser().getUid();
 
-        list = (ListView) findViewById(R.id.listViewExerciseHistory);
-        arrayList2 = new ArrayList<String>();
+        LinearLayout linearLayout;
+        linearLayout = findViewById(R.id.linearLayout);
 
-        adapter2 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList2);
-        list.setAdapter(adapter2);
 
         Task<QuerySnapshot> documentReference = db.collection("exercises").whereEqualTo("UUID", UUID).orderBy("date").get();
         documentReference.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -53,9 +56,28 @@ public class ExerciseHistoryActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Log.d(TAG, document.getId() + " => " + document.getData());
-                        arrayList2.add("Exercise Pack: " + document.getString("type") + " Date: " + document.getString("date") );
-                        adapter2.notifyDataSetChanged();
 
+                        TextView text1 = new TextView(ExerciseHistoryActivity.this);
+                        text1.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                        linearLayout.addView(text1);
+                        TextView text2 = new TextView(ExerciseHistoryActivity.this);
+                        text2.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                        linearLayout.addView(text2);
+                        text1.setText("Exercise Pack: " + document.getString("type") + " Date: " + document.getString("date"));
+                        text2.setText("^Latitude: " + document.getString("latitude") + " Longitude: " + document.getString("longitude"));
+                        Button button = new Button(ExerciseHistoryActivity.this);
+                        button.setText("Check on Map");
+                        button.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(ExerciseHistoryActivity.this,MainActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        if (linearLayout != null){
+                            linearLayout.addView(button);
+                        }
                     }
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
