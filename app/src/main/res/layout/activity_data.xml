@@ -11,7 +11,8 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:background="@color/purple_500">
         
         <LinearLayout
             android:layout_width="fill_parent"
@@ -32,8 +33,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"
-                        android:orientation="vertical"
-                        android:background="#C0C0C0">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -66,6 +66,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="150.0dp"
                         android:layout_gravity="center"
+                android:layout_margin="10.0dp"
                         android:gravity="center"
                         android:orientation="horizontal"
                         android:background="@drawable/backgroundcrop">
@@ -74,7 +75,9 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.0"
-                            android:orientation="vertical">
+                            android:layout_margin="5.0dp"
+                            android:orientation="vertical"
+                            android:background="@color/purple_500">
 
 
                                 <TextView
@@ -85,66 +88,95 @@
                                     android:textSize="12.0dp"
                                     android:layout_gravity="center"
                                     android:gravity="center"
-                                    android:textColor="#ff000000"
+                                    android:textColor="@color/white"
                                     android:textStyle="bold"/>
 
-                                <EditText
-                                    android:id="@+id/age"
+                            <EditText
+                                android:id="@+id/age"
+                                android:layout_width="120.0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.5"
+                                android:backgroundTint="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:inputType="textPersonName"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:orientation="vertical"
+                                android:background="@color/purple_500">
+
+
+                                <TextView
                                     android:layout_width="120.0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="monospace"
+                                    android:gravity="center"
+                                    android:text="Insert your height (meters):"
+                                    android:textColor="@color/white"
+                                    android:textSize="12.0dp"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/height"
+                                    android:layout_width="120.0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
                                     android:layout_weight="0.5"
+                                    android:backgroundTint="#FFFFFF"
+                                    android:ems="10"
+                                    android:gravity="center"
+                                    android:inputType="textPersonName"
+                                    android:textColor="@color/white" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/InsertData"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:gravity="center"
-                                    android:ems="10"
-                                    android:inputType="textPersonName" />
+                                    android:text="Add" />
+
+
+
+
+
+                            </LinearLayout>
 
 
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.0"
-                            android:orientation="vertical">
-
-
-                            <TextView
-                                android:layout_width="120.0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:fontFamily="monospace"
-                                android:gravity="center"
-                                android:text="Insert your height (meters):"
-                                android:textColor="#ff000000"
-                                android:textSize="12.0dp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/height"
-                                android:layout_width="120.0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:ems="10"
-                                android:inputType="textPersonName" />
-
-                            <Button
-                                android:id="@+id/InsertData"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="Add" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.0"
-                            android:orientation="vertical">
+                            android:layout_margin="5.0dp"
+                            android:orientation="vertical"
+                            android:background="@color/purple_500">
 
 
                             <TextView
@@ -154,7 +186,7 @@
                                 android:fontFamily="monospace"
                                 android:gravity="center"
                                 android:text="Insert your weight (kg):"
-                                android:textColor="#ff000000"
+                                android:textColor="@color/white"
                                 android:textSize="12.0dp"
                                 android:textStyle="bold" />
 
@@ -162,11 +194,13 @@
                                 android:id="@+id/weight"
                                 android:layout_width="120.0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
                                 android:layout_gravity="center"
-                                android:gravity="center"
+                                android:layout_weight="0.5"
+                                android:backgroundTint="#FFFFFF"
                                 android:ems="10"
-                                android:inputType="textPersonName" />
+                                android:gravity="center"
+                                android:inputType="textPersonName"
+                                android:textColor="@color/white" />
 
 
                         </LinearLayout>
@@ -183,7 +217,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10.0dp"
                 android:layout_marginTop="15.0dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/backgroundcrop">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -195,7 +230,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/backgroundcrop">
 
                     <Button
                         android:layout_width="200.0dp"

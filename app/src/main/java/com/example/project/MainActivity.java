@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button button1, button2;
+    Button favourite1, favourite2;
     Double latitude, longitude;
     FusedLocationProviderClient fusedLocationClient;
 
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         button1 = findViewById(R.id.startclass1);
         button2 = findViewById(R.id.startclass2);
+        favourite1 = findViewById(R.id.fav1);
+        favourite2 = findViewById(R.id.fav2);
+
 
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
         String UUID = fAuth.getCurrentUser().getUid();
