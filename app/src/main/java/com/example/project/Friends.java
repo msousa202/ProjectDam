@@ -51,6 +51,7 @@ public class Friends extends AppCompatActivity {
 
         Map<String, Object> friendData = new HashMap<>(); // começo de fazer amigo
 
+
         btnInsertFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

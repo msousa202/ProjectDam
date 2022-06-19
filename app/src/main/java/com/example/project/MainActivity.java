@@ -14,6 +14,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.BreakIterator;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -35,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button button1, button2;
-    Button favourite1, favourite2;
     Double latitude, longitude;
     FusedLocationProviderClient fusedLocationClient;
+
 
 
     @Override
@@ -47,16 +49,21 @@ public class MainActivity extends AppCompatActivity {
 
         button1 = findViewById(R.id.startclass1);
         button2 = findViewById(R.id.startclass2);
-        favourite1 = findViewById(R.id.fav1);
-        favourite2 = findViewById(R.id.fav2);
 
 
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
+
+
+
+        Map<String, Object> favData = new HashMap<>();
+
         String UUID = fAuth.getCurrentUser().getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         DateFormat df = new SimpleDateFormat("yyyy,MM,dd HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
+
+
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -153,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     }
 
 
@@ -183,6 +192,12 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this,Friends.class);
         startActivity(intent);
+
+    }
+
+    public void AddToFav1(View view) {
+
+        Toast.makeText(this,"Fav", Toast.LENGTH_SHORT).show();
 
     }
 }
