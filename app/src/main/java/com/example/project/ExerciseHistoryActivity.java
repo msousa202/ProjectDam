@@ -71,7 +71,9 @@ public class ExerciseHistoryActivity extends AppCompatActivity {
                         button.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(ExerciseHistoryActivity.this,MainActivity.class);
+                                Intent intent = new Intent(ExerciseHistoryActivity.this,MapsActivity.class);
+                                intent.putExtra("latitude",Double.parseDouble(document.getString("latitude")));
+                                intent.putExtra("longitude",Double.parseDouble(document.getString("longitude")));
                                 startActivity(intent);
                             }
                         });
