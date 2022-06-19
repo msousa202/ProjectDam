@@ -66,16 +66,16 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        // Got last known location. In some rare situations this can be null.
-                        if (location != null) {
-                            // Logic to handle location object
-                            latitude = location.getLatitude();
-                            longitude = location.getLongitude();
-                        }
-                    }
-                });
+            @Override
+            public void onSuccess(Location location) {
+                // Got last known location. In some rare situations this can be null.
+                if (location != null) {
+                    // Logic to handle location object
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                }
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,4 +172,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void GoToFriends(View view) {
+
+        Intent intent = new Intent(MainActivity.this,Friends.class);
+        startActivity(intent);
+
+    }
 }

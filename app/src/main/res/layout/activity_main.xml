@@ -22,6 +22,90 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_margin="10.0dp"
+                android:layout_marginTop="15.0dp"
+                android:background="@drawable/backgroundcrop"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:onClick="GoToFriends"
+                    android:layout_width="fill_parent"
+                    android:layout_height="120.0dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:padding="5.0dp"
+                            android:text="Friend list!"
+                            android:textSize="20.0dp"
+                            android:textColor="#ff000000"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:padding="5.0dp"
+                            android:text="Find new friends to share your workouts!"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.0">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/exersice_15"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.0"
+                        android:background="@drawable/backgroundcrop">
+
+                        <ImageView
+                            android:id="@+id/startFriends"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10.0dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:onClick="B18"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:padding="5.0dp"
-                            android:text="Before Age 18"
+                            android:text="Exercise List 1"
                             android:textColor="#ff000000"
                             android:textSize="20.0dp"
                             android:textStyle="bold"
@@ -138,21 +222,17 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"
-                        android:orientation="vertical"
-
-                        >
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:padding="5.0dp"
-                            android:text="After Age 18"
+                            android:text="Exercise List 2"
                             android:textColor="#ff000000"
                             android:textSize="20.0dp"
-                            android:textStyle="bold"
-
-                            />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="fill_parent"
@@ -215,7 +295,6 @@
 
 
             </LinearLayout>
-
             <LinearLayout
                 android:onClick="food"
                 android:layout_width="fill_parent"
@@ -300,6 +379,7 @@
 
 
             </LinearLayout>
+
 
 
             <LinearLayout
