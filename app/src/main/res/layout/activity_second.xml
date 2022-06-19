@@ -22,7 +22,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:background="@color/purple_500">
 
 
             <LinearLayout
@@ -39,12 +40,12 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
                         android:id="@+id/best_pose1"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -133,12 +134,12 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
                         android:id="@+id/best_pose2"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -227,12 +228,12 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
                         android:id="@+id/best_pose3"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -321,12 +322,12 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
                         android:id="@+id/best_pose4"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -415,12 +416,13 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
+
                         android:id="@+id/best_pose6"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -509,12 +511,13 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
+
                         android:id="@+id/best_pose7"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -603,12 +606,13 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
+
                         android:id="@+id/best_pose8"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -697,12 +701,12 @@
                     >
 
                     <LinearLayout
-                        android:onClick="Imagebuttononcliecked"
                         android:id="@+id/best_pose9"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout

@@ -15,7 +15,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1.0"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/purple_500">
 
 
         <ScrollView
@@ -44,6 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -129,6 +131,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="vertical"
+
                     >
 
                     <LinearLayout
@@ -137,6 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -230,6 +234,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -323,6 +328,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -416,6 +422,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -509,6 +516,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
@@ -602,6 +610,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10.0dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/backgroundcrop"
                         >
 
                         <LinearLayout
