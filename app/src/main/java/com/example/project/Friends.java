@@ -5,7 +5,6 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,27 +60,41 @@ public class Friends extends AppCompatActivity {
                 friendData.put("friendEmail", friend);
                 friendData.put("MyUUID", MyUUID);
 
-                if(db.collection("userFireStore").whereEqualTo("email", friend).get()!=null){
-                    db.collection("friendData")
-                            .add(friendData)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(Friends.this,"Added Friend Succefully", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
+                Task<QuerySnapshot> existingFriends = db.collection("friendData").whereEqualTo("friendEmail", friend).get();
+                Task<QuerySnapshot> existingAccounts = db.collection("userFireStore").whereEqualTo("email", friend).get();
+                existingAccounts.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()&&!existingAccounts.getResult().isEmpty()&&existingFriends.getResult().isEmpty()) {
 
-                                }
-                            });
+                            db.collection("friendData")
+                                    .add(friendData)
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                        @Override
+                                        public void onSuccess(DocumentReference documentReference) {
+                                            Toast.makeText(Friends.this,"Added Friend Succefully", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                            startActivity(getIntent());
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
 
-                }else{
-                    Toast.makeText(Friends.this,"That Friend Hasn't started using the app yet!", Toast.LENGTH_SHORT).show();
-                }
-                }
+                                        }
+                                    });
 
+                        } else if (task.isSuccessful()&&!existingAccounts.getResult().isEmpty()&&!existingFriends.getResult().isEmpty()){
+                            Toast.makeText(Friends.this,"That Friend is in your list!", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(Friends.this,"That Friend Hasn't started using the app yet!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+
+                });
+            }
         });//fim de fazer amigo
 
         Task<QuerySnapshot> documentReference = db.collection("friendData").whereEqualTo("MyUUID", MyUUID).orderBy("friendEmail").get();//adicionar TextViews com emails dos amigos
