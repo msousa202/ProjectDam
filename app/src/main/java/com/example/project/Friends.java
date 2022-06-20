@@ -46,11 +46,12 @@ public class Friends extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance(); //base de dados FireStore
 
-        LinearLayout linearLayout;
-        linearLayout = findViewById(R.id.linearLayout); //layout onde vamos adicionar textview dinâmicos
+        LinearLayout friendsListedLayout;
+        friendsListedLayout = findViewById(R.id.friendsListedLayout); //layout onde vamos adicionar textview dinâmicos
 
         Map<String, Object> friendData = new HashMap<>(); // começo de fazer amigo
-
+        btnInsertFriend = findViewById(R.id.addFriend);
+        editTextFriend = findViewById(R.id.addFriends);
 
         btnInsertFriend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +84,7 @@ public class Friends extends AppCompatActivity {
 
         });//fim de fazer amigo
 
-        Task<QuerySnapshot> documentReference = db.collection("friendData").whereEqualTo("UUID", MyUUID).get();//adicionar TextViews com emails dos amigos
+        Task<QuerySnapshot> documentReference = db.collection("friendData").whereEqualTo("MyUUID", MyUUID).orderBy("friendEmail").get();//adicionar TextViews com emails dos amigos
         documentReference.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -93,8 +94,8 @@ public class Friends extends AppCompatActivity {
 
                         TextView text1 = new TextView(Friends.this);
                         text1.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                        linearLayout.addView(text1);
-                        text1.setText("Friend Email: " + document.getString("email"));
+                        friendsListedLayout.addView(text1);
+                        text1.setText("" + document.getString("friendEmail"));
 
                     }
                 } else {

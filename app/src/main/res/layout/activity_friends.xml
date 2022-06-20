@@ -137,7 +137,7 @@
                             android:id="@+id/addFriends"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="                       ...                       " />
+                            android:hint="                       ...                       " />
 
                         <Button
                             android:id="@+id/addFriend"
@@ -156,39 +156,33 @@
 
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="150.0dp"
+                    android:layout_height="303dp"
+                    android:layout_marginTop="10.0dp"
                     android:background="@drawable/backgroundcrop"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10.0dp">
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:fontFamily="serif"
+                        android:gravity="top"
+                        android:text="Your friend List"
+                        android:textColor="#ff000000"
+                        android:textStyle="bold" />
 
                     <LinearLayout
+                        android:id="@+id/friendsListedLayout"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.0"
-                        android:orientation="horizontal"
-                        android:layout_margin="10.0dp"
                         android:layout_gravity="center"
-                        android:gravity="center">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Your friend List"
-                            android:textStyle="bold"
-                            android:layout_gravity="top"
-                            android:gravity="top"
-                            android:fontFamily="serif"
-                            android:textColor="#ff000000"/>
-
-
-
-
-
-
+                        android:layout_margin="10.0dp"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
