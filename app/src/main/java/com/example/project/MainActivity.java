@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Map<String, Object> exercises = new HashMap<>();
 
-                exercises.put("type", "under 18");
+                exercises.put("type", "Exercise List 1");
                 exercises.put("date", date);
                 exercises.put("UUID", UUID);
                 exercises.put("latitude", latitude.toString());
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Map<String, Object> exercises = new HashMap<>();
 
-                exercises.put("type", "Over 18");
+                exercises.put("type", "Exercise List 2");
                 exercises.put("date", date);
                 exercises.put("UUID", UUID);
                 exercises.put("latitude", latitude.toString());
