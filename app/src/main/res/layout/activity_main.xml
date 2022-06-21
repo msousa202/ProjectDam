@@ -106,7 +106,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="B18"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10.0dp"
@@ -122,14 +121,14 @@
                     android:orientation="horizontal">
 
                     <ToggleButton
-                        android:onClick="AddToFav1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:textOn=""
-                        android:textOff=""
-                        android:gravity="center"
                         android:layout_gravity="end|bottom"
-                        android:background="@drawable/toggle_selector"/>
+                        android:background="@drawable/toggle_selector"
+                        android:gravity="center"
+                        android:onClick="AddToFav1"
+                        android:textOff=""
+                        android:textOn="" />
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -188,16 +187,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.0">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="10.0dp"
-                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-
-                            />
-                    </LinearLayout>
+                        android:layout_weight="0.0"/>
                 </LinearLayout>
 
                 <Button
@@ -208,12 +198,12 @@
                     android:background="@color/purple_700"
                     android:text="Get started"
                     android:textAllCaps="true"
-                    android:textColor="#FFF"/>
+                    android:textColor="#FFF" />
 
 
             </LinearLayout>
+
             <LinearLayout
-                android:onClick="A18"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10.0dp"
@@ -229,14 +219,14 @@
                     android:orientation="horizontal">
 
                     <ToggleButton
-                        android:onClick="AddToFav1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:textOn=""
-                        android:textOff=""
-                        android:gravity="center"
                         android:layout_gravity="end|bottom"
-                        android:background="@drawable/toggle_selector"/>
+                        android:background="@drawable/toggle_selector"
+                        android:gravity="center"
+                        android:onClick="AddToFav1"
+                        android:textOff=""
+                        android:textOn="" />
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -291,16 +281,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.0">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="10.0dp"
-                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-
-                            />
-                    </LinearLayout>
+                        android:layout_weight="0.0"/>
                 </LinearLayout>
 
                 <Button
@@ -311,7 +292,7 @@
                     android:background="@color/purple_700"
                     android:text="Get started"
                     android:textAllCaps="true"
-                    android:textColor="#FFF"/>
+                    android:textColor="#FFF" />
 
 
             </LinearLayout>

@@ -50,10 +50,7 @@ public class MainActivity extends AppCompatActivity {
         button1 = findViewById(R.id.startclass1);
         button2 = findViewById(R.id.startclass2);
 
-
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
-
-
 
         Map<String, Object> favData = new HashMap<>();
 
@@ -92,9 +89,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-                startActivity(intent);
-
                 Map<String, Object> exercises = new HashMap<>();
 
                 exercises.put("type", "Exercise List 1");
@@ -110,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Toast.makeText(MainActivity.this,"Exercise Pack Registered and Started Succefully. Good Luck!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                                startActivity(intent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -126,9 +122,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this,SecondActivity2.class);
-                startActivity(intent);
-
                 Map<String, Object> exercises = new HashMap<>();
 
                 exercises.put("type", "Exercise List 2");
@@ -144,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Toast.makeText(MainActivity.this,"Exercise Pack Registered and Started Succefully. Good Luck!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this,SecondActivity2.class);
+                                startActivity(intent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -165,25 +160,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void B18(View view) {
-
-        Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-        startActivity(intent);
-
-
-    }
-
-
     public void food(View view) {
 
         Intent intent = new Intent(MainActivity.this, DataActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void A18(View view) {
-
-        Intent intent = new Intent(MainActivity.this,SecondActivity2.class);
         startActivity(intent);
 
     }
